@@ -7,9 +7,9 @@ Enjoy if you use!<br>
 (This for now by default saves to your downloads folder by the way, works for any OS as long as you have a downloads folder!)<br>
 <br>
 Current Features:<br>
-- Convert YouTube to MP4<br>
-- Convert YouTube to MP3<br>
+-Convert YouTube to MP4<br>
+-Convert YouTube to MP3<br>
 <br>
 Intended future features:<br>
-- Pick a path to save to<br>
-- Add more formats<br>
+-Pick a path to save to<br>
+-Add more formats<br>
