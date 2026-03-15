@@ -11,5 +11,5 @@ Current Features:<br>
 - Convert YouTube to MP3<br>
 <br>
 Intended future features:<br>
-- Pick a path to save to
-- Add more formats
+- Pick a path to save to<br>
+- Add more formats<br>
