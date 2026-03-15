@@ -12,3 +12,4 @@ Current Features:<br>
 <br>
 Intended future features:<br>
 - Pick a path to save to
+- Add more formats
