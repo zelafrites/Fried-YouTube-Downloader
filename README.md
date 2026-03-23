@@ -3,6 +3,7 @@ My first ever piece of utility I made :)
 
 It's like those youtube to mp4 stuff on the web except free from ads and much quicker than them<br>
 Enjoy if you use!<br>
+Only works on LINUX systems as of right now<br>
 <br>
 (This for now by default saves to your downloads folder by the way, works for any OS as long as you have a downloads folder!)<br>
 <br>
