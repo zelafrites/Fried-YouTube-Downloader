@@ -34,23 +34,22 @@ def download_mp4(link):
     path = Path.home() / "Downloads"
 
     try:
-        downloaded_video = yt_stream.download(path)
+        yt_stream.download(path)
 
+        # turn it into format supported by STUPID h.264 grr
         subprocess.run([
-            # Call ffmpeg
-            "ffmpeg",
-            # Input file
-            "-i", downloaded_video,
-            # Set video codec to H.264
-            "-c:v", "libx264",
-            # Set audio codec to AAC
-            "-c:a", "aac",
-            # Set output file name and format
-            Path(downloaded_video).with_suffix(".mp4")
+            "ffmpeg", 
+            "-i", 
+            str(path / yt_stream.default_filename), 
+            "-vcodec", 
+            "libx264", 
+            "-acodec", 
+            "aac", 
+            str(path / f"{yt_stream.default_filename}.mp4")
         ])
 
         # Remove the original downloaded video file
-        Path(downloaded_video).unlink()
+        Path(path / yt_stream.default_filename).unlink()
 
         print("Your video has been downloaded!")
         progress_bar["value"] = 100
