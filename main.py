@@ -29,12 +29,29 @@ def on_progress(stream, chunk, bytes_remaining):
 def download_mp4(link):
 
     yt_obj = YouTube(link, on_progress_callback=on_progress)
-    yt_stream = yt_obj.streams.get_highest_resolution()
+    yt_stream = yt_obj.streams.first()
 
     path = Path.home() / "Downloads"
 
     try:
-        yt_stream.download(path)
+        downloaded_video = yt_stream.download(path)
+
+        subprocess.run([
+            # Call ffmpeg
+            "ffmpeg",
+            # Input file
+            "-i", downloaded_video,
+            # Set video codec to H.264
+            "-c:v", "libx264",
+            # Set audio codec to AAC
+            "-c:a", "aac",
+            # Set output file name and format
+            Path(downloaded_video).with_suffix(".mp4")
+        ])
+
+        # Remove the original downloaded video file
+        Path(downloaded_video).unlink()
+
         print("Your video has been downloaded!")
         progress_bar["value"] = 100
     except Exception as e:
